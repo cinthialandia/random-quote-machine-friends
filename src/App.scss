@@ -1,6 +1,16 @@
+.friends-logo {
+  max-width: 100%;
+  width: 350px;
+  padding: 50px;
+  margin-bottom: 50px;
+}
+.container-logo {
+  text-align: center;
+}
+
 .friends {
   max-width: 100px;
-  border: 10px solid #00aabb;
+  border: 10px solid white;
   border-radius: 50%;
 }
 .quote {
@@ -13,8 +23,7 @@
   text-align: right;
 }
 
-.App {
-  height: 100%;
+.container {
   display: flex;
   align-items: center;
 }
@@ -22,6 +31,12 @@
 .buttons {
   padding-top: 20px;
   text-align: right;
+
+  button {
+    color: white;
+    font-size: 15px;
+    padding: 10px 25px;
+  }
 }
 
 .photoCharacter {
@@ -36,7 +51,7 @@
 
 .speech-bubble {
   position: relative;
-  background: #00aabb;
+  background: white;
   border-radius: 0.4em;
   width: 400px;
   padding: 50px;
@@ -50,11 +65,17 @@
   width: 0;
   height: 0;
   border: 23px solid transparent;
-  border-right-color: #00aabb;
+  border-right-color: white;
   border-left: 0;
   border-bottom: 0;
   margin-top: -11.5px;
   margin-left: -23px;
+}
+
+.App {
+  min-height: 100%;
+  padding: 30px 0;
+  text-shadow: 6px 5px 3px rgba(202, 202, 202, 0.69);
 }
 
 /* This query was necessary for changing the size of the elements on mobile cellphone*/
@@ -62,9 +83,6 @@
   /*welcome section media query*/
 
   .speech-bubble {
-    position: relative;
-    background: #00aabb;
-    border-radius: 0.4em;
     width: 300px;
     padding: 40px;
   }
@@ -77,20 +95,49 @@
     width: 0;
     height: 0;
     border: 23px solid transparent;
-    border-bottom-color: #00aabb;
+    border-bottom-color: white;
     border-top: 0;
     margin-left: -23px;
     margin-top: -23px;
   }
 
-  .App {
+  .container {
     display: flex;
     flex-direction: column;
     justify-content: center;
   }
 
   .photoCharacter {
-    padding-top: 50px;
+    padding-bottom: 30px;
     padding-right: 0px;
   }
+  .friends-logo {
+    margin-bottom: 5px;
+  }
+}
+/*this controls the colors*/
+
+@mixin theme($color) {
+  color: $color;
+  background-color: $color;
+
+  .buttons button {
+    background-color: $color;
+  }
+
+  svg {
+    color: $color;
+  }
+}
+
+.blue {
+  @include theme(#02b1e2);
+}
+
+.red {
+  @include theme(#e91e23);
+}
+
+.yellow {
+  @include theme(#fabc16);
 }
