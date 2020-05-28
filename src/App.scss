@@ -1,18 +1,69 @@
+/*this controls the colors*/
+
+@mixin theme($color) {
+  color: $color;
+  background-color: $color;
+
+  .buttons button {
+    background-color: $color;
+  }
+}
+
+.blue {
+  @include theme(#02b1e2);
+}
+
+.red {
+  @include theme(#e91e23);
+}
+
+.yellow {
+  @include theme(#fabc16);
+}
+/*this controls the colors*/
+
+.App {
+  min-height: 100%;
+  padding: 30px 0;
+  text-shadow: 6px 5px 3px rgba(202, 202, 202, 0.69);
+}
+
+/*logo design*/
+.container-logo {
+  text-align: center;
+}
+
 .friends-logo {
   max-width: 100%;
   width: 350px;
   padding: 50px;
   margin-bottom: 50px;
 }
-.container-logo {
-  text-align: center;
+/*logo design*/
+
+/*photo and bubble design*/
+.container-photo-and-bubble {
+  display: flex;
+  align-items: center;
 }
 
-.friends {
+.photo-character {
+  flex: 1;
+  text-align: right;
+  padding-right: 40px;
+}
+
+.photo-friend {
   max-width: 100px;
   border: 10px solid white;
   border-radius: 50%;
 }
+
+.container-bubble {
+  flex: 2;
+  text-align: left;
+}
+
 .quote {
   font-size: 25px;
   margin-bottom: 20px;
@@ -21,11 +72,6 @@
 .character {
   font-size: 20px;
   text-align: right;
-}
-
-.container {
-  display: flex;
-  align-items: center;
 }
 
 .buttons {
@@ -38,17 +84,9 @@
     padding: 10px 25px;
   }
 }
+/*photo and bubble design*/
 
-.photoCharacter {
-  flex: 1;
-  text-align: right;
-  padding-right: 40px;
-}
-.container-bubble {
-  flex: 2;
-  text-align: left;
-}
-
+/*bubble design*/
 .speech-bubble {
   position: relative;
   background: white;
@@ -71,12 +109,7 @@
   margin-top: -11.5px;
   margin-left: -23px;
 }
-
-.App {
-  min-height: 100%;
-  padding: 30px 0;
-  text-shadow: 6px 5px 3px rgba(202, 202, 202, 0.69);
-}
+/*bubble design*/
 
 /* This query was necessary for changing the size of the elements on mobile cellphone*/
 @media only screen and (max-width: 800px) {
@@ -101,43 +134,17 @@
     margin-top: -23px;
   }
 
-  .container {
+  .container-photo-and-bubble {
     display: flex;
     flex-direction: column;
     justify-content: center;
   }
 
-  .photoCharacter {
+  .photo-character {
     padding-bottom: 30px;
     padding-right: 0px;
   }
   .friends-logo {
     margin-bottom: 5px;
   }
-}
-/*this controls the colors*/
-
-@mixin theme($color) {
-  color: $color;
-  background-color: $color;
-
-  .buttons button {
-    background-color: $color;
-  }
-
-  svg {
-    color: $color;
-  }
-}
-
-.blue {
-  @include theme(#02b1e2);
-}
-
-.red {
-  @include theme(#e91e23);
-}
-
-.yellow {
-  @include theme(#fabc16);
 }

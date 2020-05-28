@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "./App.scss";
-import { TwitterShareButton } from "react-share";
 
+//this colors are css clases that would be change the color of the page
 const THEMES = ["red", "blue", "yellow"];
 
 function App() {
@@ -22,6 +22,7 @@ function App() {
     const result = await apiQuotes();
     setQuote(result.quote);
     setCharacter(result.character);
+    //this a trick where you are taking the next item of the array
     const nextThemeIndex = (THEMES.indexOf(theme) + 1) % THEMES.length;
     setTheme(THEMES[nextThemeIndex]);
   }
@@ -35,9 +36,13 @@ function App() {
           alt="friends"
         />
       </div>
-      <div className="container">
-        <div className="photoCharacter">
-          <img className="friends" src={`/img/${character}.png`} alt="monica" />
+      <div className="container-photo-and-bubble">
+        <div className="photo-character">
+          <img
+            className="photo-friend"
+            src={`/img/${character}.png`}
+            alt="friend"
+          />
         </div>
         <div className="container-bubble">
           <div className="speech-bubble">
