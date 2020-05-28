@@ -27,8 +27,11 @@
 /*this controls the colors*/
 
 .App {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   min-height: 100%;
-  padding: 30px 0;
+
   text-shadow: 6px 5px 3px rgba(202, 202, 202, 0.69);
 }
 

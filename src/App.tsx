@@ -30,13 +30,13 @@ function App() {
 
   return (
     <div id="quote-box" className={`App ${theme}`}>
-      <div className="container-logo">
+      {/* <div className="container-logo">
         <img
           className="friends-logo"
           src="/img/friends-logo.png"
           alt="friends"
         />
-      </div>
+      </div> */}
       <div className="container-photo-and-bubble">
         <div className="photo-character">
           <img
