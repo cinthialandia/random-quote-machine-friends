@@ -18,26 +18,22 @@ function App() {
     const result = await apiQuotes();
     setQuote(result.quote);
     setCharacter(result.character);
-    console.log(result);
   }
-
-  //const friends = [];
 
   return (
     <div className="App">
-      <header className="App-header">
-        <div>
-          <img
-            className="friends-logo"
-            src="/img/friends-logo.png"
-            alt="friends-logo"
-          />
+      <div className="photoCharacter">
+        <img className="friends" src={`/img/${character}.png`} alt="monica" />
+      </div>
+      <div className="container-bubble">
+        <div className="speech-bubble">
+          <div className="quote">{`“${quote}”`}</div>
+          <div className="character">{`-${character}`}</div>
+          <div className="buttons">
+            <button onClick={handleClick}>Random Quote</button>
+          </div>
         </div>
-
-        <div>Aqui va: {quote}</div>
-        <div>by: {character}</div>
-        <button onClick={handleClick}>Random Quote</button>
-      </header>
+      </div>
     </div>
   );
 }
