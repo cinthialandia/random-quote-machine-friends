@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import TwitterLink from "./TwitterLink";
 import "./App.scss";
 
 //this colors are css clases that would be change the color of the page
@@ -28,7 +29,7 @@ function App() {
   }
 
   return (
-    <div className={`App ${theme}`}>
+    <div id="quote-box" className={`App ${theme}`}>
       <div className="container-logo">
         <img
           className="friends-logo"
@@ -46,10 +47,15 @@ function App() {
         </div>
         <div className="container-bubble">
           <div className="speech-bubble">
-            <div className="quote">{`“${quote}”`}</div>
-            <div className="character">{`-${character}`}</div>
+            <div id="text" className="quote">{`“${quote}”`}</div>
+            <div id="author" className="character">{`-${character}`}</div>
             <div className="buttons">
-              <button onClick={handleClick}>Random Quote</button>
+              <div>
+                <TwitterLink quote={quote} character={character} />
+              </div>
+              <button id="new-quote" onClick={handleClick}>
+                Random Quote
+              </button>
             </div>
           </div>
         </div>

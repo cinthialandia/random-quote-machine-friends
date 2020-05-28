@@ -7,6 +7,10 @@
   .buttons button {
     background-color: $color;
   }
+
+  svg {
+    fill: $color;
+  }
 }
 
 .blue {
@@ -75,6 +79,9 @@
 }
 
 .buttons {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   padding-top: 20px;
   text-align: right;
 
@@ -82,6 +89,8 @@
     color: white;
     font-size: 15px;
     padding: 10px 25px;
+    border: none;
+    cursor: pointer;
   }
 }
 /*photo and bubble design*/
